@@ -1,0 +1,40 @@
+-- public.notes definition
+
+-- Drop table
+
+-- DROP TABLE public.notes;
+
+CREATE TABLE public.notes (
+	note_id int4 NOT NULL,
+	"content" varchar NOT NULL,
+	title varchar NOT NULL,
+	CONSTRAINT notes_pk PRIMARY KEY (note_id)
+);
+
+
+-- public.tags definition
+
+-- Drop table
+
+-- DROP TABLE public.tags;
+
+CREATE TABLE public.tags (
+	tag_id int4 NOT NULL,
+	"name" varchar NOT NULL,
+	CONSTRAINT tags_pk PRIMARY KEY (tag_id)
+);
+
+
+-- public.note_tags definition
+
+-- Drop table
+
+-- DROP TABLE public.note_tags;
+
+CREATE TABLE public.note_tags (
+	note_id int4 NOT NULL,
+	tag_id int4 NOT NULL,
+	CONSTRAINT note_tags_pk PRIMARY KEY (note_id, tag_id),
+	CONSTRAINT note_tags_fk FOREIGN KEY (note_id) REFERENCES public.notes(note_id),
+	CONSTRAINT note_tags_fk_1 FOREIGN KEY (tag_id) REFERENCES public.tags(tag_id)
+);
