@@ -36,5 +36,11 @@ If doesn't work try using the postgres user.
 ## References
 https://harshityadav95.medium.com/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3
 
+# Go Backend
+This section covers the backend server deployment.
+
+## Dependencies
+Install the required dependencies by running `go install`.
+
 ## Running the Go server
 Simply execute `go run server.go` to run the backend server.

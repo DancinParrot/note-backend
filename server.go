@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"time"
 
 	_ "github.com/lib/pq"
 )
@@ -63,7 +62,7 @@ func getAllNotes(w http.ResponseWriter, request *http.Request) {
 		for rows.Next() {
 			var note Note
 
-			if err := rows.Scan(&note.Note_id, &note.Content, &note.Date_created, &note.Date_updated, &note.Title, &note.Notebook_id); err != nil {
+			if err := rows.Scan(&note.Note_id, &note.Content, &note.Title, &note.Notebook_id); err != nil {
 				log.Println(err.Error())
 			}
 
